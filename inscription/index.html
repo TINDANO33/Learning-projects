@@ -7,19 +7,38 @@
     <title>Inscription</title>
 </head>
 <body>
-
+    <div class="success">
+        <div>
+            <img src="./images/valid.png" alt="">
+            <p>Votre inscription a été effectuée avec succès</p>
+            <p class="bar"></p>
+        </div>
+    </div>
     <div class="container">
         <div>
-            <h1>Inscription</h3>
-            <p>Veuillez remplire ce formulaire</p>
-            <form action="" id="form">
-                <input type="text" id="nom" placeholder="Nom">
-                <input type="text" id="prenom" placeholder="Prénom">
-                <input type="text" id="password" placeholder="Mot de passe">
-                <input type="text" id="passwordConfirm" placeholder="Confimer le mot de passe">
-                <button id="btn" type="button" onclick="soumission()">Valider</button>
-                <a href="#">Avez-vous déjà un compte?</a>
-            </form>
+            <div class="texte">
+                <h1>Inscription</h3>
+            </div>
+            <form action="" name="form" id="form">
+                Nom<input type="text" id="nom" onkeyup="nameVerify()" placeholder="first name">
+                Prénom<input type="text" id="prenom" onkeyup="prenomVerify()" placeholder="Last name">
+                <!-- <button id="btn" type="button" onclick="soumission()">Valider</button> -->
+                 <label for="number">Numéro de téléphone</label>
+                <div class="phone-input">
+                    <select aria-label="select" id="country-select">
+                        <option value="+226" data-country="Burkina Faso">Burkina Faso (+226)</option>
+                        <option value="+1" data-country="USA">USA (+1)</option>
+                        <option value="+33" data-country="France">France (+33)</option>
+                        <option value="+44" data-country="UK">UK (+44)</option>
+                        <!-- Ajoutez d'autres pays ici -->
+                    </select>
+                    <input type="tel" id="phone-input" placeholder="Phone number" required>
+                </div>
+                Mot de passe<input type="password" id="password" placeholder="Password">
+                Confirmer mot de passe<input type="password" id="passwordConfirm" placeholder="Password confirm">
+                <button id="submit-btn" type="button">Valider</button>
+            </form> 
+            <p>Avez-vous déjà un compte? <a href="#"> se connecter</a></p>
         </div>
     </div>
     
